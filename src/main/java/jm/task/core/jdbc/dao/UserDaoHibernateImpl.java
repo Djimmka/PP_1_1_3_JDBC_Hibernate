@@ -52,7 +52,7 @@ public class UserDaoHibernateImpl implements UserDao {
                 List<User> users = getAllUsers();
                 i = users.stream().mapToLong(User::getId).max();
             } catch (RuntimeException e) {}
-            long j = (i.isPresent()) ? i.getAsLong() : (long) 1;
+            long j = (i.isPresent()) ? (i.getAsLong()+1) : (long) 1;
             User user = new User(name, lastName, age);
             user.setId(j);
             session.save(user);
