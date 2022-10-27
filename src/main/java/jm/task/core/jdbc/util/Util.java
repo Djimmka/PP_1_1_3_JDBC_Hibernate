@@ -18,8 +18,6 @@ public class Util {
 
     private static SessionFactory sessionFactory;
 
-    //SessionFactory sf = new SessionFactory
-
     public Util(){
         Properties prop= new Properties();
         prop.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/pp_1_1_3-4_jdbc_hibernate-master");

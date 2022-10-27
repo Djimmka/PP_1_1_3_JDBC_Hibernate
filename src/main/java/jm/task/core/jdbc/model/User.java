@@ -1,6 +1,4 @@
 package jm.task.core.jdbc.model;
-
-//import org.hibernate.annotations.Entity;
 import javax.persistence.*;
 
 @Entity
@@ -8,10 +6,6 @@ import javax.persistence.*;
 
 public class User {
     @Id
-//    @SequenceGenerator(name = "id", sequenceName = "id", allocationSize = 0)
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id")
-//    @TableGenerator(name="TABLE_GEN",table="T_GENERATOR",pkColumnName="GEN_KEY",pkColumnValue="TEST",valueColumnName="GEN_VALUE",initialValue=1,allocationSize=1)
-//    @GeneratedValue(strategy=GenerationType.TABLE, generator="TABLE_GEN")
     @Column (name = "id")
     private Long id;
 

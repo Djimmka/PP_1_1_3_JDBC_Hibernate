@@ -8,7 +8,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     private final UserDaoJDBCImpl uDAO = new UserDaoJDBCImpl();
     private static final UserDaoHibernateImpl uDAOH = new UserDaoHibernateImpl();
-    public static boolean hibernateActive = true;
+    public static boolean hibernateActive = false;
     public void createUsersTable() {
         if (hibernateActive) {
             uDAOH.createUsersTable();

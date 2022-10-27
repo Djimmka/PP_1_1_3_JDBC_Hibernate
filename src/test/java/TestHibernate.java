@@ -2,15 +2,7 @@ import jm.task.core.jdbc.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
-import javax.persistence.*;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.UniqueConstraint;
-import java.io.Serializable;
 import java.util.Properties;
-
-import static javax.persistence.GenerationType.IDENTITY;
 
 public class TestHibernate {
 
