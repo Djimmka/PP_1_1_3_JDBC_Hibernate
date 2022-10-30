@@ -15,7 +15,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public void createUsersTable() {
         try(Connection connect = utilSet.getConnection()){
             Statement statement = connect.createStatement();
-            statement.execute("CREATE TABLE if not exists `pp_1_1_3-4_jdbc_hibernate-master`.`users` (\n" +
+            statement.execute("CREATE TABLE if not exists `pp_1_1_3-4_jdbc_hibernate-master`.`users` (\n" + //
                     "  `id` INT NOT NULL AUTO_INCREMENT,\n" +
                     "  `name` VARCHAR(45) NULL,\n" +
                     "  `surname` VARCHAR(45) NULL,\n" +
@@ -23,15 +23,17 @@ public class UserDaoJDBCImpl implements UserDao {
                     "  PRIMARY KEY (`id`));");
         } catch (SQLException e) {
             System.out.println("ошибка создания таблицы пользователей");
+            e.printStackTrace();
         }
     }
 
     public void dropUsersTable() {
         try(Connection connect = utilSet.getConnection()){
             Statement statement = connect.createStatement();
-            statement.execute("drop table if exists users;");
+            statement.execute("drop table if exists users;");  //
         } catch (SQLException e) {
             System.out.println("ошибка удаления таблицы");
+            e.printStackTrace();
         }
     }
 
@@ -43,6 +45,7 @@ public class UserDaoJDBCImpl implements UserDao {
             System.out.println("Пользователь " + name + " " + lastName + " " + age + " добавлен");
         } catch (SQLException e) {
             System.out.println("Пользователь не добавлен");
+            e.printStackTrace();
         }
     }
 
@@ -51,7 +54,8 @@ public class UserDaoJDBCImpl implements UserDao {
             Statement statement = connect.createStatement();
             statement.execute("delete from users where id=" + id + ";");
         } catch (SQLException e) {
-            System.out.println("Jшибка удаления cуществующей записи");
+            System.out.println("Ошибка удаления cуществующей записи");
+            e.printStackTrace();
         }
     }
 
@@ -70,6 +74,7 @@ public class UserDaoJDBCImpl implements UserDao {
             return res;
         } catch (SQLException e) {
             System.out.println("Ошибка выполнения команды вывода содержимого таблицы");
+            e.printStackTrace();
         }
 
         return null;
@@ -81,6 +86,7 @@ public class UserDaoJDBCImpl implements UserDao {
             statement.execute("truncate table users");
         } catch (SQLException e) {
             System.out.println("Ошибка выполнения команды удаления");
+            e.printStackTrace();
         }
     }
 }
