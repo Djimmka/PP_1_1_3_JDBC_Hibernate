@@ -7,7 +7,6 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        // реализуйте алгоритм здесь
         Set<User> fourUsers = new HashSet<User>(Set.of(new User("Vasya","Vasylich", (byte) 15),
                                                         new User("Petya", "", (byte) 18),
                                                         new User("Георгий", "Викторович" , (byte) 67),
